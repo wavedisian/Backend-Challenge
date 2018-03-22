@@ -1,6 +1,5 @@
-package src;
+package DefaultPackage;
 
-import java.awt.print.Book;
 import java.io.BufferedReader; 
 import java.io.IOException; 
 import java.nio.charset.StandardCharsets; 
@@ -13,7 +12,7 @@ import java.util.List;
 public class CSVReader {
 	public static void main(String... args) 
 	{ 
-		List<Book> books = readBooksFromCSV("books.txt"); 
+		List<Book> books = readBooksFromCSV("books.csv"); 
 		
 		for(Book b : books) 
 		{
@@ -54,6 +53,8 @@ public class CSVReader {
 		String name = metadata[0];
 		int price = Integer.parseInt(metadata[1]);
 		String author = metadata[2];
+		
+		return new Book(name, price, author);
 	}
 	
 }
